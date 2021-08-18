@@ -6,6 +6,7 @@ import { ReportsModule } from './reports/reports.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { User } from './users/user.entity';
+import { Report } from './reports/report.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { User } from './users/user.entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: 'carsale',
-      entities: [User],
+      entities: [User, Report],
       synchronize: true,
     }),
     UsersModule,
